@@ -25,4 +25,5 @@ if [ -n "${SSH_PUBLIC_KEY}" ]; then
   exec /usr/sbin/sshd -D -o "SetEnv=${SSH_ENV}"
 else
   echo "No SSH_PUBLIC_KEY is provided. Proceed without SSH daemon"
+  exec "$@"
 fi

@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  fargate-gitlab-runner-worker:
+    build: .
+    image: ${IMAGE_NAME:-fargate-gitlab-runner-worker}:${IMAGE_TAG:-latest}
+    environment:
+      - SSH_PUBLIC_KEY
+      - AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
